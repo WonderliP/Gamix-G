@@ -1,0 +1,163 @@
+// Підключення файлу обнуляючих стилів
+@import "reset";
+// Підключення шрифтів
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap");
+// Змінні
+// Шрифти
+$ffMain: "Josefin Sans", sans-serif;
+// Розмір шрифту
+$fontSize: 18px;
+// Жирність шрифту
+$fontWeight: 700;
+// Колір шрифту
+$colorPrimary: #2e2594;
+$colorPrimaryShade1: #2e299a;
+$colorPrimaryShade2: #171147;
+$colorSecondary: #b53071;
+$colorSecondaryTint1: #d5356f;
+$colorSecondaryTint2: #dc3b89;
+
+$colorAccent: #352c63;
+$colorAccentTint1: #390075;
+$colorAccentShade1: #332b5c;
+// Налаштування обмежучого контейнеру
+// Внутрішній padding обмежуючого контейнеру (по 15px зліва і справа)
+$paddingContainer: 30px;
+$maxWidth: 1170px + $paddingContainer;
+// Налаштування сторінки
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $ffMain;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  color: $colorPrimary;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+}
+
+.page {
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.container {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// Стилі для кнопки
+.button {
+  display: inline-block;
+  line-height: 1.33;
+  text-align: center;
+  color: #fff;
+  background-color: $colorSecondary;
+  padding: 13px 34px 13px 35px;
+  border-radius: 25px;
+  white-space: nowrap;
+  position: relative;
+  transition: background-color 0.3s ease 0s;
+  &:hover {
+    background-color: $colorSecondaryTint2;
+  }
+}
+.button-arrow {
+  @extend .button;
+  position: relative;
+  padding-right: 75px;
+  &::after {
+    content: "";
+    position: absolute;
+    background: url(../img/icons/arrow-right.svg) 82% 0 no-repeat;
+    top: 17px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s ease 0s;
+  }
+  &:hover {
+    &::after {
+      background: url(../img/icons/arrow-right.svg) 95% 0 no-repeat;
+    }
+  }
+}
+.heading {
+  font-size: 50px;
+  line-height: 108%;
+  color: $colorPrimaryShade2;
+  span {
+    color: #842774;
+  }
+}
+.text {
+  font-weight: 400;
+  line-height: 133%;
+  color: $colorAccent;
+}
+.subheading {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: $colorPrimaryShade1;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  @media (max-width: 479.98px) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+.swiper {
+  .swiper-pagination {
+    bottom: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    opacity: 1;
+    &-active {
+      width: 24px;
+      height: 24px;
+      background-color: $colorSecondary;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .heading {
+    font-size: 46px;
+  }
+}
+@media (max-width: 767.98px) {
+  .heading {
+    font-size: 40px;
+  }
+}
+@media (max-width: 479.98px) {
+  .heading {
+    font-size: 36px;
+  }
+}
+
+// Підключення файлів зі стилями всіх блоків
+@import "header";
+@import "hero";
+@import "about";
+@import "products";
+@import "streamer";
+@import "testimonials";
+@import "footer";

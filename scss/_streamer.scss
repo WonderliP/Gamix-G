@@ -1,0 +1,124 @@
+.page {
+  &__streamer {
+  }
+}
+.streamer {
+  background: url(../img/streamer/background.png) center no-repeat;
+  background-size: cover;
+  padding: 30px 0;
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  &::before {
+    background: url(../img/streamer/blur-1.svg) 0 0 no-repeat,
+      url(../img/streamer/blur-2.svg) 0 100% no-repeat,
+      url(../img/streamer/blur-3.svg) 100% 0 no-repeat;
+  }
+  &::after {
+    background: url(../img/streamer/circle.svg) 90px 60px no-repeat,
+      url(../img/streamer/circle.svg) 75% 60px no-repeat,
+      url(../img/streamer/square.svg) 380px 130px no-repeat,
+      url(../img/streamer/square.svg) 97% 120px no-repeat,
+      url(../img/streamer/cross.svg) 235px 205px no-repeat,
+      url(../img/streamer/cross.svg) 83% 195px no-repeat;
+  }
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__subheading {
+    text-align: center;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+    span {
+      color: $colorSecondary;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 100%;
+        left: 0;
+        background: url(../img/streamer/underline.svg) no-repeat;
+      }
+    }
+  }
+
+  &__videos {
+    display: flex;
+    margin: 0 -15px;
+    margin-bottom: 60px;
+  }
+
+  &__video {
+    margin: 0 15px;
+    position: relative;
+    img {
+      max-width: 100%;
+      border-radius: 175px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: url(../img/streamer/play.svg) center no-repeat;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    &__videos {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__video {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+    &__heading {
+      margin-bottom: 40px;
+    }
+    @media (max-width: 479.98px) {
+      &__heading {
+        font-size: 32px;
+        margin-bottom: 30px;
+      }
+      &__videos {
+        margin-bottom: 40px;
+      }
+      &__video {
+        &::before {
+          background-size: 30%;
+        }
+      }
+    }
+  }
+}
+.streamer-swiper {
+  &__wrapper {
+  }
+
+  &__slide {
+  }
+
+  &__pagination {
+  }
+}

@@ -1,0 +1,226 @@
+.page {
+  &__hero {
+  }
+}
+.hero {
+  background: url(../img/hero/background.png) center no-repeat, #ffecfb;
+  background-size: cover;
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &::before {
+    background: url(../img/hero/ellipse-1.svg) 0 12% no-repeat,
+      url(../img/hero/rectangles.svg) 41% 22% no-repeat,
+      url(../img/hero/decor-blur.svg) 0 0 no-repeat;
+  }
+  &::after {
+    background: url(../img/hero/ellipse-2.svg) 100% 9% no-repeat,
+      url(../img/hero/cross.svg) 90% 42% no-repeat,
+      url(../img/hero/cross.svg) 5% 20% no-repeat,
+      url(../img/hero/circle.svg) 35.3% 43.5% no-repeat,
+      url(../img/hero/square.svg) 85% 17% no-repeat;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    padding-top: 94px;
+    padding-bottom: 33px;
+    position: relative;
+  }
+
+  &__body {
+    padding-top: 10px;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__subheading {
+    padding-top: 20px;
+  }
+
+  &__heading {
+    max-width: 440px;
+    font-size: 58px;
+    line-height: 117%;
+    color: $colorPrimaryShade2;
+    position: relative;
+    span {
+      color: $colorSecondaryTint1;
+    }
+    .heading-hero__decor {
+      display: inline-block;
+      font-size: 44px;
+      line-height: 155%;
+      color: #f2f2f2;
+      position: absolute;
+      width: 150px;
+      height: 130px;
+      transform: rotate(-16deg);
+      top: 40%;
+      left: 62%;
+      z-index: 5;
+      &::before {
+        content: "";
+        position: absolute;
+        background: url(../img/hero/gamepad.svg) no-repeat;
+        width: 100%;
+        height: 100%;
+        top: -10px;
+        left: -15px;
+        z-index: -1;
+        transform: rotate(16deg);
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__text {
+    max-width: 520px;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    z-index: 3;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__link-trailer {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+    z-index: 3;
+    .link-trailer__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      background-color: rgba(255, 255, 255, 0.4);
+      width: 40px;
+      height: 36px;
+      border-radius: 6px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .link-trailer__text {
+      font-weight: 600;
+      line-height: 133%;
+      color: $colorPrimaryShade1;
+      transform: translateY(13%);
+    }
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &__decor-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // z-index: 2;
+    margin-right: -100px;
+    margin-top: -10px;
+    img {
+      display: block;
+      max-width: 100%;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      background: url(../img/hero/review-decor.svg) 25% 12% no-repeat;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background: url(../img/hero/wire.svg) 5% 82% no-repeat,
+        url(../img/hero/decor-elements-to-image.svg) 48% 47% no-repeat;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__decor-elements {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 1170px) {
+    &__decor-image {
+      &::after {
+        background: url(../img/hero/decor-elements-to-image.svg) 48% 47%
+          no-repeat;
+      }
+    }
+  }
+  @media (max-width: 767.98px) {
+    &__container {
+      padding-top: 75px;
+      padding-bottom: 30px;
+    }
+    &__body {
+      margin: 0 auto;
+    }
+    &__decor-image {
+      display: none;
+    }
+    &__heading {
+      max-width: none;
+      font-size: 44px;
+      .heading-hero__decor {
+        left: 10px;
+        top: 100%;
+      }
+      &:not(:last-child) {
+        margin-bottom: 120px;
+      }
+    }
+  }
+  @media (max-width: 479.98px) {
+    &__container {
+      padding-top: 55px;
+      padding-bottom: 30px;
+    }
+    &__heading {
+      &:not(:last-child) {
+        margin-bottom: 110px;
+      }
+    }
+    &__buttons {
+      flex-direction: column;
+    }
+    &__button {
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+    &__text {
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
